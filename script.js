@@ -110,11 +110,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // --- Video Fallback ---
+    // --- Video Autoplay Fix for Mobile ---
     const heroVideo = document.querySelector('.hero__video');
     if (heroVideo) {
+        // Force play on load
+        heroVideo.muted = true;
+        heroVideo.play().catch(error => {
+            console.log("Autoplay was prevented, waiting for interaction:", error);
+            // Fallback: try to play on the first touch/click anywhere
+            const playOnInteraction = () => {
+                heroVideo.play();
+                document.removeEventListener('click', playOnInteraction);
+                document.removeEventListener('touchstart', playOnInteraction);
+            };
+            document.addEventListener('click', playOnInteraction);
+            document.addEventListener('touchstart', playOnInteraction);
+        });
+
         heroVideo.addEventListener('error', function () {
-            // If video fails to load, ensure poster image is visible
             this.style.display = 'none';
         });
     }
