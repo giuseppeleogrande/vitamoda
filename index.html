@@ -101,9 +101,13 @@
             "@type": "OfferCatalog",
             "name": "Abbigliamento Donna",
             "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Kontatto" }},
                 { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Tensione In" }},
-                { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Susy Mix" }}
+                { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Kontatto" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Motel" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Susy Mix" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Please" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Philia Loft" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Keyrà" }}
             ]
         },
         "openingHoursSpecification": [
@@ -111,25 +115,13 @@
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 "opens": "09:00",
-                "closes": "13:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "16:30",
-                "closes": "20:30"
+                "closes": "21:00"
             },
             {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": "Sunday",
-                "opens": "10:00",
-                "closes": "13:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Sunday",
-                "opens": "18:00",
-                "closes": "20:30"
+                "opens": "10:30",
+                "closes": "21:00"
             }
         ],
         "priceRange": "€€",
@@ -143,47 +135,7 @@
     }
     </script>
 
-    <!-- Structured Data: FAQ (GEO / AI Search) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Dove si trova Vita Moda?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Vita Moda si trova in Corso Vittorio Emanuele 47, nel centro di Alberobello (BA), a pochi passi dai celebri trulli patrimonio UNESCO."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Quali brand di abbigliamento donna tratta Vita Moda?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Vita Moda propone una selezione curata di brand come Kontatto, Tensione In, Susy Mix e altri marchi di tendenza per l'abbigliamento donna."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Quali sono gli orari di apertura di Vita Moda?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Vita Moda è aperta dal lunedì al sabato dalle 09:00 alle 13:00 e dalle 16:30 alle 20:30. La domenica dalle 10:00 alle 13:00 e dalle 18:00 alle 20:30."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "È necessario prendere appuntamento?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No, puoi venire liberamente durante gli orari di apertura. Vita ti accoglierà personalmente per aiutarti a trovare il look perfetto."
-                }
-            }
-        ]
-    }
-    </script>
+
 </head>
 
 <body>
@@ -237,9 +189,10 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <!-- Video Background (placeholder - sostituire con video reale) -->
-        <video class="hero__video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
-            <source src="assets/hero-video.mp4" type="video/mp4">
+        <!-- Background Video (New MP4 Version) -->
+        <video class="hero__video" autoplay muted loop playsinline>
+            <source src="assets/IMG_7475.mp4" type="video/mp4">
+            Il tuo browser non supporta il video.
         </video>
         <div class="hero__overlay"></div>
 
@@ -263,20 +216,20 @@
         <div class="container">
             <div class="about__grid">
                 <div class="about__image">
-                    <img src="assets/negozio-interno.jpg" alt="Interno del negozio Vita Moda ad Alberobello"
+                    <img src="assets/bio-portrait.jpg" alt="Vita, la fondatrice di Vita Moda ad Alberobello"
                         loading="lazy">
                 </div>
                 <div class="about__content">
-                    <span class="about__label">La Nostra Storia</span>
+                    <span class="about__label">LA MIA STORIA</span>
                     <h2 class="about__title">Da oltre 10 anni, <br><span class="text-accent">il gusto di Vita</span>
                     </h2>
                     <p class="about__text">
                         Vita Moda nasce dalla passione di <strong>Vita</strong> per la moda e l'eleganza.
-                        Da oltre un decennio, la nostra boutique è un punto di riferimento per le donne
+                        Da oltre un decennio, la mia boutique è un punto di riferimento per le donne
                         che cercano capi unici e uno stile che parli di loro.
                     </p>
                     <blockquote class="about__highlight">
-                        "Ogni donna merita di sentirsi speciale. Qui trovi lo stile che ti racconta."
+                        "Ogni donna merita di sentirsi speciale. Qui trova lo stile che la racconta."
                     </blockquote>
                     <p class="about__text">
                         Nel cuore di Alberobello, tra i trulli patrimonio UNESCO, Vita ti accoglie
@@ -360,46 +313,29 @@
         <div class="container">
             <span class="brands__label">Le nostre selezioni</span>
             <h2 class="brands__title">I Brand</h2>
-            <div class="brands__list">
-                <span class="brands__item">Kontatto</span>
-                <span class="brands__item">Tensione In</span>
-                <span class="brands__item">Susy Mix</span>
-                <span class="brands__item">E altri ancora...</span>
+            <div class="brands__slider">
+                <div class="brands__track">
+                    <!-- First set of brands -->
+                    <span class="brands__item">Tensione In</span>
+                    <span class="brands__item">Kontatto</span>
+                    <span class="brands__item">Motel</span>
+                    <span class="brands__item">Susy Mix</span>
+                    <span class="brands__item">Please</span>
+                    <span class="brands__item">Philia Loft</span>
+                    <span class="brands__item">Keyrà</span>
+                    <!-- Duplicate set for infinite loop -->
+                    <span class="brands__item">Tensione In</span>
+                    <span class="brands__item">Kontatto</span>
+                    <span class="brands__item">Motel</span>
+                    <span class="brands__item">Susy Mix</span>
+                    <span class="brands__item">Please</span>
+                    <span class="brands__item">Philia Loft</span>
+                    <span class="brands__item">Keyrà</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section (SEO + GEO) -->
-    <section class="faq section" id="faq">
-        <div class="container">
-            <span class="faq__label">Hai qualche domanda?</span>
-            <h2 class="faq__title">Domande Frequenti</h2>
-            <div class="faq__list">
-                <details class="faq__item">
-                    <summary class="faq__question">Dove si trova Vita Moda?</summary>
-                    <p class="faq__answer">Siamo in Corso Vittorio Emanuele 47, nel centro di Alberobello (BA), a pochi
-                        passi dai celebri trulli patrimonio UNESCO. Ci trovi facilmente passeggiando per il corso
-                        principale.</p>
-                </details>
-                <details class="faq__item">
-                    <summary class="faq__question">Quali brand di abbigliamento donna trattate?</summary>
-                    <p class="faq__answer">Lavoriamo con una selezione curata di brand come Kontatto, Tensione In, Susy
-                        Mix e altri marchi di tendenza. Ogni stagione selezioniamo i capi migliori per offrirti uno
-                        stile unico.</p>
-                </details>
-                <details class="faq__item">
-                    <summary class="faq__question">Quali sono gli orari di apertura?</summary>
-                    <p class="faq__answer">Siamo aperti dal lunedì al sabato dalle 09:00 alle 13:00 e dalle 16:30 alle
-                        20:30. La domenica dalle 10:00 alle 13:00 e dalle 18:00 alle 20:30.</p>
-                </details>
-                <details class="faq__item">
-                    <summary class="faq__question">È necessario prendere appuntamento?</summary>
-                    <p class="faq__answer">No, puoi venire liberamente durante i nostri orari di apertura. Vita ti
-                        accoglierà personalmente per aiutarti a trovare il look perfetto per ogni occasione.</p>
-                </details>
-            </div>
-        </div>
-    </section>
 
     <!-- Location Section -->
     <section class="location section" id="location">
@@ -480,6 +416,11 @@
                 </a>
             </div>
             <p class="footer__text">Vita Moda — Abbigliamento Donna ad Alberobello</p>
+            <div class="footer__info">
+                <p><strong>VITA MODA</strong> di Vita Panaro</p>
+                <p>Sede Legale: Piazza Di Vagno, 1 - 70011 Alberobello (BA)</p>
+                <p>P.IVA: 07366970726 | C.F.: PNRVTI78S42F915X</p>
+            </div>
             <p class="footer__credits">© 2026 Vita Moda. Tutti i diritti riservati.</p>
         </div>
     </footer>

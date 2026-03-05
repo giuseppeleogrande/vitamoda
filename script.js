@@ -21,12 +21,55 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleNavScroll);
     handleNavScroll(); // Initial check
 
-    // --- Highlight Current Day in Hours Section ---
-    const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
-    const currentDayItem = document.querySelector(`.hours__item[data-day="${today}"]`);
-    if (currentDayItem) {
-        currentDayItem.classList.add('hours__item--today');
+    // --- Dynamic Opening Hours & Current Day Highlight ---
+    function initOpeningHours() {
+        const today = new Date();
+        const currentMonth = today.getMonth() + 1; // 1-12
+        const currentDay = today.getDate();
+        const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, etc.
+
+        // Determina se è Orario Invernale (dal 15/10 al 15/04)
+        // Invernale: Mesi 11, 12, 1, 2, 3 + seconda metà Ottobre (>=15) + prima metà Aprile (<=15)
+        const isWinter = (currentMonth > 10 || currentMonth < 4) ||
+            (currentMonth === 10 && currentDay >= 15) ||
+            (currentMonth === 4 && currentDay <= 15);
+
+
+
+        const hours = {
+            winter: {
+                weekday: "09:00 - 13:00<br>16:30 - 20:30",
+                sunday: "10:30 - 13:00<br>Chiuso"
+            },
+            summer: {
+                weekday: "09:00 - 13:00<br>17:00 - 21:00",
+                sunday: "10:30 - 13:00<br>17:00 - 21:00"
+            }
+        };
+
+        const currentSchedule = isWinter ? hours.winter : hours.summer;
+
+        // Aggiorna tutti gli elementi orario
+        document.querySelectorAll('.hours__item').forEach(item => {
+            const day = parseInt(item.getAttribute('data-day'));
+            const timeElement = item.querySelector('.hours__time');
+
+            if (timeElement) {
+                if (day === 0) { // Domenica
+                    timeElement.innerHTML = currentSchedule.sunday;
+                } else { // Lunedì - Sabato
+                    timeElement.innerHTML = currentSchedule.weekday;
+                }
+            }
+
+            // Highlight oggi
+            if (day === dayOfWeek) {
+                item.classList.add('hours__item--today');
+            }
+        });
     }
+
+    initOpeningHours();
 
     // --- Mobile Menu Toggle ---
     const navToggle = document.getElementById('navToggle');
@@ -108,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
  * Google Apps Script URL — Inserisci qui l'URL della Web App dopo il deploy.
  * Lascialo vuoto per usare le foto placeholder durante lo sviluppo.
  */
-const APPS_SCRIPT_URL = '';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxPc0g_H-vwyeCZ525JHRJ1rNkY-R03MJX0ffQzJ4FHl4f2teGcBmsHvhKN1YwU4jdfew/exec';
 
 /**
  * Placeholder photos for development (before Drive integration is set up).
