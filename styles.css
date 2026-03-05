@@ -1255,3 +1255,52 @@ h3 {
         font-size: 14px;
     }
 }
+
+/* --- LegalBlink Cookie Banner Customization --- */
+/* Target general banner container */
+div[id^="lb_cs"] .lb-cs-banner,
+.lb-cs-banner,
+#lb_cs_banner {
+    background-color: #FAF6F1 !important;
+    /* Cream */
+    border-radius: 16px !important;
+    border: 1px solid rgba(212, 0, 106, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    padding: 20px !important;
+    font-family: var(--font-body) !important;
+    color: var(--color-text) !important;
+}
+
+/* Base button styles */
+.lb-cs-btn,
+div[id^="lb_cs"] button {
+    border-radius: 50px !important;
+    font-family: var(--font-heading) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-size: 0.75rem !important;
+    padding: 10px 24px !important;
+    transition: all var(--transition-fast) !important;
+}
+
+/* Primary "Accetta" button */
+.lb-cs-btn-primary,
+div[id^="lb_cs"] .lb-cs-btn-primary {
+    background-color: var(--color-accent) !important;
+    /* Fuchsia */
+    border: 1px solid var(--color-accent) !important;
+    color: white !important;
+}
+
+.lb-cs-btn-primary:hover {
+    background-color: var(--color-accent-light) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Secondary/Preference links */
+.lb-cs-settings-link,
+div[id^="lb_cs"] .lb-cs-settings-link {
+    color: var(--color-accent) !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+}
