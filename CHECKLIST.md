@@ -5,7 +5,11 @@ Per creare un sito che rispecchi l'identità di "Vita Moda" e sia ottimizzato pe
 
 ### Identità Visiva
 - [ ] **Logo**: In alta risoluzione (formato PNG con sfondo trasparente o vettoriale SVG/AI).
-- [ ] **Palette Colori**: Se avete colori specifici del brand (es. codici HEX o riferimenti Pantone).
+- [ ] **Palette Colori**: Se avete colori specifici del brand (es. codici HEX)
+- [x] Inserimento PEC nelle info legali (Footer)
+- [/] Ottimizzazione Asset (Compressione video + immagini WebP)
+- [ ] Analisi e riduzione Build Minutes su Netlify
+- [x] Bordi arrotondati immagine Bio
 - [ ] **Font**: Se avete preferenze tipografiche o font già usati nell'insegna/materiale cartaceo.
 
 ### Contenuti Testuali
