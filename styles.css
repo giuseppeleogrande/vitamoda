@@ -1257,56 +1257,57 @@ h3 {
 }
 
 /* --- LegalBlink Cookie Banner Customization --- */
-/* Aumentata specificità con body per sovrascrivere i default caricati via JS */
-body div[id^="lb_cs"] .lb-cs-banner,
-body .lb-cs-banner,
-body #lb_cs_banner,
-#lb_cs_banner.lb-cs-banner {
+/* Forzatura tramite ID specifici trovati dall'ispezione */
+
+/* Contenitore principale (Modal) */
+#cc_div #cm {
     background-color: #FAF6F1 !important;
-    /* Cream */
-    border-radius: 16px !important;
-    border: 1px solid rgba(212, 0, 106, 0.2) !important;
+    /* Crema del sito */
+    border-radius: 20px !important;
+    border: 1px solid rgba(212, 0, 106, 0.15) !important;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
     padding: 24px !important;
-    font-family: var(--font-body) !important;
-    color: var(--color-text) !important;
+    font-family: 'Outfit', sans-serif !important;
 }
 
-/* Base button styles */
-body .lb-cs-btn,
-body div[id^="lb_cs"] button,
-body #lb_cs_banner button {
+/* Titolo e Testo */
+#cc_div #cm_title,
+#cc_div #cm_text {
+    color: #333333 !important;
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Pulsante Primario ("I accept" / "Accetto") */
+#cc_div #cm_primary_btn {
+    background-color: #D4006A !important;
+    /* Fuchsia Vita Moda */
+    color: white !important;
     border-radius: 50px !important;
-    font-family: var(--font-heading) !important;
+    font-family: 'Outfit', sans-serif !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
-    font-size: 0.75rem !important;
-    padding: 12px 28px !important;
-    transition: all var(--transition-fast) !important;
     font-weight: 600 !important;
+    border: none !important;
+    padding: 12px 30px !important;
 }
 
-/* Primary "Accetta" button - Forziamo fucsia */
-body .lb-cs-btn-primary,
-body div[id^="lb_cs"] .lb-cs-btn-primary,
-body #lb_cs_banner .lb-cs-btn-primary,
-body #lb_cs_banner button:first-of-type {
-    background-color: var(--color-accent) !important;
-    /* Fuchsia */
-    border: 1px solid var(--color-accent) !important;
-    color: white !important;
-}
-
-body .lb-cs-btn-primary:hover {
-    background-color: var(--color-accent-light) !important;
+#cc_div #cm_primary_btn:hover {
+    background-color: #B8005A !important;
     transform: translateY(-2px) !important;
 }
 
-/* Secondary/Preference links */
-body .lb-cs-settings-link,
-body div[id^="lb_cs"] .lb-cs-settings-link,
-body #lb_cs_banner a {
-    color: var(--color-accent) !important;
-    text-decoration: underline !important;
-    font-weight: 500 !important;
+/* Pulsante Secondario ("Settings") */
+#cc_div #cm_secondary_btn {
+    background-color: #E8E2D9 !important;
+    /* Crema più scura */
+    color: #D4006A !important;
+    border-radius: 50px !important;
+    font-family: 'Outfit', sans-serif !important;
+    border: 1px solid rgba(212, 0, 106, 0.2) !important;
+}
+
+/* Pulsante chiusura (X) */
+#cc_div #cm_close_btn {
+    background-color: transparent !important;
+    color: #D4006A !important;
 }
