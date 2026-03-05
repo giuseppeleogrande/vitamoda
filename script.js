@@ -115,11 +115,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (heroVideo) {
         // Force play on load
         heroVideo.muted = true;
-        heroVideo.play().catch(error => {
+        heroVideo.play().then(() => {
+            heroVideo.classList.add('playing');
+        }).catch(error => {
             console.log("Autoplay was prevented, waiting for interaction:", error);
             // Fallback: try to play on the first touch/click anywhere
             const playOnInteraction = () => {
-                heroVideo.play();
+                heroVideo.play().then(() => {
+                    heroVideo.classList.add('playing');
+                });
                 document.removeEventListener('click', playOnInteraction);
                 document.removeEventListener('touchstart', playOnInteraction);
             };

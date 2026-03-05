@@ -291,6 +291,11 @@ h3 {
     object-fit: cover;
     object-position: center;
     /* Ensures the subject is centered regardless of aspect ratio */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero__video.playing {
     opacity: 0.8;
 }
 
