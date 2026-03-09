@@ -1,25 +1,4 @@
 # Netlify Configuration
-# Redirect tutte le varianti del dominio alla URL canonica
-
-# Forza HTTPS
-[[redirects]]
-  from = "http://vitamoda.it/*"
-  to = "https://www.vitamoda.it/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://www.vitamoda.it/*"
-  to = "https://www.vitamoda.it/:splat"
-  status = 301
-  force = true
-
-# Redirect non-www a www (HTTPS)
-[[redirects]]
-  from = "https://vitamoda.it/*"
-  to = "https://www.vitamoda.it/:splat"
-  status = 301
-  force = true
 
 # Headers di sicurezza
 [[headers]]
