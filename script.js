@@ -38,12 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const hours = {
             winter: {
-                weekday: "09:00 - 13:00<br>16:30 - 20:30",
-                sunday: "10:30 - 13:00<br>Chiuso"
+                weekday: "09:00 - 12:59<br>16:30 - 20:30",
+                sunday: "10:30 - 12:59<br>Chiuso"
             },
             summer: {
-                weekday: "09:00 - 13:00<br>17:00 - 21:00",
-                sunday: "10:30 - 13:00<br>17:00 - 21:00"
+                weekday: "09:00 - 12:59<br>17:00 - 21:00",
+                sunday: "10:30 - 12:59<br>17:00 - 21:00"
             }
         };
 
